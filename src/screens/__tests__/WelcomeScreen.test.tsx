@@ -43,7 +43,7 @@ describe('WelcomeScreen', () => {
     it('should render first page with correct content for new users', () => {
       const { getByText } = render(<WelcomeScreen isReturningUser={false} />);
 
-      expect(getByText('Welcome to Docter.io')).toBeTruthy();
+      expect(getByText('Welcome to Threadr')).toBeTruthy();
       expect(
         getByText(
           'Your personal writing companion for organizing stories, characters, places, and events all in one place.'
@@ -334,7 +334,7 @@ describe('WelcomeScreen', () => {
     it('should display title and description for each page', () => {
       const { getByText } = render(<WelcomeScreen isReturningUser={false} />);
 
-      expect(getByText('Welcome to Docter.io')).toBeTruthy();
+      expect(getByText('Welcome to Threadr')).toBeTruthy();
       expect(
         getByText(/personal writing companion/i)
       ).toBeTruthy();
@@ -370,7 +370,7 @@ describe('WelcomeScreen', () => {
       const { getByText } = render(<WelcomeScreen />);
 
       // Should show new user content
-      expect(getByText('Welcome to Docter.io')).toBeTruthy();
+      expect(getByText('Welcome to Threadr')).toBeTruthy();
     });
   });
 });

@@ -70,7 +70,7 @@ export const AccountScreen = () => {
   const openPortal = async () => {
     setProcessingPortal(true);
     try {
-      const response = await createPortalSession('minidocter://account');
+      const response = await createPortalSession('minithreadr://account');
       if (!response.ok) {
         throw new Error('Failed to open portal');
       }

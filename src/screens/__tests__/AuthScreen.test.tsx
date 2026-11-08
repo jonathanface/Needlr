@@ -25,7 +25,7 @@ describe('AuthScreen', () => {
     it('should render the auth screen with title and subtitle', () => {
       const { getByText } = render(<AuthScreen />);
 
-      expect(getByText('Docter.io')).toBeTruthy();
+      expect(getByText('Threadr')).toBeTruthy();
       expect(getByText('Your writing companion')).toBeTruthy();
     });
 
@@ -39,6 +39,12 @@ describe('AuthScreen', () => {
       const { getByText } = render(<AuthScreen />);
 
       expect(getByText('Sign in with Amazon')).toBeTruthy();
+    });
+
+    it('should render GitHub sign in button', () => {
+      const { getByText } = render(<AuthScreen />);
+
+      expect(getByText('Sign in with GitHub')).toBeTruthy();
     });
 
     it('should render terms and privacy policy footer', () => {
@@ -75,6 +81,7 @@ describe('AuthScreen', () => {
 
       expect(queryByText('Sign in with Google')).toBeNull();
       expect(queryByText('Sign in with Amazon')).toBeNull();
+      expect(queryByText('Sign in with GitHub')).toBeNull();
     });
   });
 
@@ -100,6 +107,18 @@ describe('AuthScreen', () => {
 
       await waitFor(() => {
         expect(mockSignIn).toHaveBeenCalledWith('amazon');
+      });
+    });
+
+    it('should call signIn with github when GitHub button is pressed', async () => {
+      mockSignIn.mockResolvedValue(undefined);
+
+      const { getByText } = render(<AuthScreen />);
+
+      fireEvent.press(getByText('Sign in with GitHub'));
+
+      await waitFor(() => {
+        expect(mockSignIn).toHaveBeenCalledWith('github');
       });
     });
 
@@ -172,6 +191,7 @@ describe('AuthScreen', () => {
       // Should show the buttons again
       expect(queryByText('Sign in with Google')).toBeTruthy();
       expect(queryByText('Sign in with Amazon')).toBeTruthy();
+      expect(queryByText('Sign in with GitHub')).toBeTruthy();
     });
 
     it('should reset loading state after sign in fails', async () => {
@@ -188,6 +208,7 @@ describe('AuthScreen', () => {
       // Should show the buttons again
       expect(queryByText('Sign in with Google')).toBeTruthy();
       expect(queryByText('Sign in with Amazon')).toBeTruthy();
+      expect(queryByText('Sign in with GitHub')).toBeTruthy();
     });
 
     it('should handle multiple sign in attempts', async () => {

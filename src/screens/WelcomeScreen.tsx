@@ -42,7 +42,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ isReturningUser = 
       ]
     : [
         {
-          title: 'Welcome to Docter.io',
+          title: 'Welcome to Threadr',
           description: 'Your personal writing companion for organizing stories, characters, places, and events all in one place.',
           emoji: '📝',
         },

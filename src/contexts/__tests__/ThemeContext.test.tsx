@@ -48,7 +48,7 @@ describe('ThemeContext', () => {
         expect(result.current.theme).toBe('dark');
       });
 
-      expect(mockAsyncStorage.getItem).toHaveBeenCalledWith('@minidocter_theme');
+      expect(mockAsyncStorage.getItem).toHaveBeenCalledWith('@minithreadr_theme');
       expect(result.current.colors).toEqual(darkColors);
     });
 
@@ -121,7 +121,7 @@ describe('ThemeContext', () => {
       });
 
       expect(result.current.colors).toEqual(lightColors);
-      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minidocter_theme', 'light');
+      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minithreadr_theme', 'light');
     });
 
     it('should toggle from light to dark theme', async () => {
@@ -145,7 +145,7 @@ describe('ThemeContext', () => {
       });
 
       expect(result.current.colors).toEqual(darkColors);
-      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minidocter_theme', 'dark');
+      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minithreadr_theme', 'dark');
     });
 
     it('should handle AsyncStorage setItem error gracefully', async () => {
@@ -200,7 +200,7 @@ describe('ThemeContext', () => {
       });
 
       expect(result.current.colors).toEqual(lightColors);
-      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minidocter_theme', 'light');
+      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minithreadr_theme', 'light');
     });
 
     it('should set theme to dark', async () => {
@@ -224,7 +224,7 @@ describe('ThemeContext', () => {
       });
 
       expect(result.current.colors).toEqual(darkColors);
-      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minidocter_theme', 'dark');
+      expect(mockAsyncStorage.setItem).toHaveBeenCalledWith('@minithreadr_theme', 'dark');
     });
   });
 

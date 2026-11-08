@@ -174,7 +174,7 @@ describe('AccountScreen', () => {
       fireEvent.press(getByText('MANAGE BILLING'));
 
       await waitFor(() => {
-        expect(mockCreatePortalSession).toHaveBeenCalledWith('minidocter://account');
+        expect(mockCreatePortalSession).toHaveBeenCalledWith('minithreadr://account');
       });
     });
 
