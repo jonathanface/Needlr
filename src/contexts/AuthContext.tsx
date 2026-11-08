@@ -9,7 +9,7 @@ import { API_BASE_URL, USE_EXPO_GO } from '../config/environment';
 interface AuthContextType {
   user: UserDetails | null;
   isLoading: boolean;
-  signIn: (provider: 'google' | 'amazon') => Promise<void>;
+  signIn: (provider: 'google' | 'amazon' | 'github') => Promise<void>;
   signOut: () => Promise<void>;
   setUser: (user: UserDetails | null) => void;
   getSessionToken: () => Promise<string | null>;
@@ -238,7 +238,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const signIn = async (provider: 'google' | 'amazon') => {
+  const signIn = async (provider: 'google' | 'amazon' | 'github') => {
     try {
       setIsLoading(true);
 
@@ -253,7 +253,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         redirectUrl = Linking.createURL('auth/callback');
       } else {
         // Production: use custom scheme
-        redirectUrl = 'minidocter://auth/callback';
+        redirectUrl = 'minithreadr://auth/callback';
       }
 
       const authUrl = `${baseUrl}/auth/${provider}?next=${encodeURIComponent(redirectUrl)}`;

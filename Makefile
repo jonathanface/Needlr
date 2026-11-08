@@ -11,9 +11,9 @@ SHELL := /bin/bash
 .SHELLFLAGS := -c 'source $(NVM_DIR)/nvm.sh 2>/dev/null; set -e; $$0 "$$@"'
 
 # Default phone IP and ports (override with: make connect PHONE_IP=192.168.1.100)
-PHONE_IP ?= 192.168.1.245
-PHONE_PORT ?= 36979
-PAIR_PORT ?= 37171
+PHONE_IP ?= 192.168.40.246
+PHONE_PORT ?= 34573
+PAIR_PORT ?= 46727
 
 # ADB shortcuts
 .PHONY: devices

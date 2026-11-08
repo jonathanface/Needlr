@@ -25,10 +25,10 @@ export const SubscribeScreen = () => {
       if (supported) {
         await Linking.openURL(checkoutUrl);
       } else {
-        alert('Unable to open checkout. Please visit rich.docter.io/checkout in your browser.');
+        alert('Unable to open checkout. Please visit threadr.net/checkout in your browser.');
       }
     } catch (err) {
-      alert('Unable to open checkout. Please visit rich.docter.io/checkout in your browser.');
+      alert('Unable to open checkout. Please visit threadr.net/checkout in your browser.');
     }
   };
 
@@ -196,14 +196,14 @@ export const SubscribeScreen = () => {
                 By subscribing you agree to our{' '}
                 <Text
                   style={styles.link}
-                  onPress={() => Linking.openURL('https://rich.docter.io/terms.html')}
+                  onPress={() => Linking.openURL('https://threadr.net/terms.html')}
                 >
                   Terms
                 </Text>{' '}
                 and{' '}
                 <Text
                   style={styles.link}
-                  onPress={() => Linking.openURL('https://rich.docter.io/privacy.html')}
+                  onPress={() => Linking.openURL('https://threadr.net/privacy.html')}
                 >
                   Privacy Policy
                 </Text>.

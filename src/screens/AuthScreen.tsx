@@ -15,7 +15,7 @@ export const AuthScreen = () => {
   const { signIn, isLoading } = useAuth();
   const [signingIn, setSigningIn] = useState(false);
 
-  const handleSignIn = async (provider: 'google' | 'amazon') => {
+  const handleSignIn = async (provider: 'google' | 'amazon' | 'github') => {
     try {
       setSigningIn(true);
       await signIn(provider);
@@ -38,11 +38,11 @@ export const AuthScreen = () => {
     <View style={styles.container}>
       <View style={styles.content}>
         <Image
-          source={require('../../assets/img/logo_trans_scaled.png')}
+          source={require('../../assets/threadr-logo.png')}
           style={styles.logo}
           resizeMode="contain"
         />
-        <Text style={styles.title}>Docter.io</Text>
+        <Text style={styles.title}>Threadr</Text>
         <Text style={styles.subtitle}>Your writing companion</Text>
 
         <View style={styles.buttonContainer}>
@@ -61,20 +61,28 @@ export const AuthScreen = () => {
           >
             <Text style={styles.buttonText}>Sign in with Amazon</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.button, styles.githubButton]}
+            onPress={() => handleSignIn('github')}
+            disabled={signingIn}
+          >
+            <Text style={styles.buttonText}>Sign in with GitHub</Text>
+          </TouchableOpacity>
         </View>
 
         <Text style={styles.footer}>
           By signing in, you agree to our{' '}
           <Text
             style={styles.link}
-            onPress={() => Linking.openURL('https://rich.docter.io/terms.html')}
+            onPress={() => Linking.openURL('https://threadr.net/terms.html')}
           >
             Terms of Service
           </Text>{' '}
           and{' '}
           <Text
             style={styles.link}
-            onPress={() => Linking.openURL('https://rich.docter.io/privacy.html')}
+            onPress={() => Linking.openURL('https://threadr.net/privacy.html')}
           >
             Privacy Policy
           </Text>
@@ -135,6 +143,9 @@ const styles = StyleSheet.create({
   },
   amazonButton: {
     backgroundColor: '#FF9900',
+  },
+  githubButton: {
+    backgroundColor: '#24292E',
   },
   buttonText: {
     color: '#fff',

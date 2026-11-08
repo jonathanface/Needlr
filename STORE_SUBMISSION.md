@@ -82,8 +82,8 @@ make eas-build
 ### 3. Required Assets
 
 #### App Icons
-- [x] Icon (1024 x 1024) - `./assets/icon.png` ✅
-- [x] Adaptive icon (Android) - `./assets/adaptive-icon.png` ✅
+- [x] Icon (1024 x 1024) - `./assets/threadr-logo.png` ✅
+- [x] Adaptive icon (Android) - `./assets/threadr-logo.png` ✅
 - [ ] Verify icons look good on both light and dark backgrounds
 
 #### Screenshots

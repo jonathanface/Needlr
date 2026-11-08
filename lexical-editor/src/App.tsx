@@ -1237,7 +1237,7 @@ function App() {
   const editorRef = useRef<LexicalEditor | null>(null);
 
   const initialConfig = {
-    namespace: 'MiniDocterEditor',
+    namespace: 'MiniThreadrEditor',
     theme: {
       paragraph: 'editor-paragraph',
       text: {

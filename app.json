@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "Docter.io",
+    "name": "Threadr",
     "slug": "MiniDocter",
-    "scheme": "minidocter",
+    "scheme": "minithreadr",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/threadr-logo.png",
     "description": "Write and organize your stories with ease",
     "primaryColor": "#007AFF",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/threadr-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -26,7 +26,7 @@
     "android": {
       "userInterfaceStyle": "automatic",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/threadr-logo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "io.docter.mobile",
@@ -42,7 +42,7 @@
           "autoVerify": true,
           "data": [
             {
-              "scheme": "minidocter",
+              "scheme": "minithreadr",
               "host": "auth",
               "pathPrefix": "/callback"
             }
